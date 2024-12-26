@@ -7,6 +7,7 @@ interface CardProps {
   title?: string;
   desc?: string;
   imgWidth?: number | string;
+  priority?: "lazy" | "eager";
 }
 
 const Card = ({
@@ -32,7 +33,7 @@ interface MissionCardProps {
   title?: string;
   desc?: string;
   children?: ReactElement;
-  imageWidth?: number;
+  imageWidth?: number | string;
   imageHeight?: number;
 }
 
@@ -46,7 +47,9 @@ export const MissionCard = ({
 }: MissionCardProps) => {
   return (
     <div className="missionCard">
-      <img src={imgSrc} alt={title} width={imageWidth} height={imageHeight} />
+      <div className="missionCard__img">
+        <img src={imgSrc} alt={title} width={imageWidth} height={imageHeight} />
+      </div>
       {title && <h3>{title}</h3>}
       {desc && <p>{desc}</p>}
       <>{children}</>

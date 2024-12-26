@@ -9,20 +9,49 @@ type SliderProps = {
 
 const Slider = ({ children, className = "", ...props }: SliderProps) => {
   const [showLeftArrow, setShowLeftArrow] = useState(false);
-  const [showRightArrow, setShowRightArrow] = useState(true);
+  const [showRightArrow, setShowRightArrow] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
   const checkArrowVisibility = () => {
     if (!containerRef.current || !contentRef.current) return;
 
-    const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
-    setShowLeftArrow(scrollLeft > 0);
-    setShowRightArrow(scrollLeft + clientWidth < scrollWidth);
+    const container = containerRef.current;
+    const content = contentRef.current;
+
+    // Check if content width exceeds container width
+    const hasOverflow = content.scrollWidth > container.clientWidth;
+
+    // Only show arrows if there's overflow
+    if (hasOverflow) {
+      const scrollLeft = container.scrollLeft;
+      const maxScroll = content.scrollWidth - container.clientWidth;
+
+      setShowLeftArrow(scrollLeft > 0);
+      setShowRightArrow(scrollLeft < maxScroll);
+    } else {
+      // Hide both arrows if no overflow
+      setShowLeftArrow(false);
+      setShowRightArrow(false);
+    }
   };
 
+  // Check on mount and when children change
   useEffect(() => {
     checkArrowVisibility();
+
+    // Add resize observer to check when container size changes
+    const resizeObserver = new ResizeObserver(() => {
+      checkArrowVisibility();
+    });
+
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
+    }
+
+    return () => {
+      resizeObserver.disconnect();
+    };
   }, [children]);
 
   const scroll = (direction: "left" | "right") => {

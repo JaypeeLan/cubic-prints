@@ -31,3 +31,8 @@
   color: #000;
   border: 1px solid #555555;
 }
+.button-tertiary {
+  background-color: #000;
+  color: #fff;
+  width: fit-content !important;
+}

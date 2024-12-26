@@ -4,8 +4,8 @@ import "aos/dist/aos.css";
 const AnimatedWrapper = ({ children }: { children: ReactElement }) => {
   useEffect(() => {
     AOS.init({
-      duration: 1500,
-      delay: 100,
+      duration: 1000,
+      delay: 50,
       //   once: true,
       easing: "ease-out",
     });

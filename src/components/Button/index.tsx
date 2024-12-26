@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import "./button.css";
 interface ButtonProps {
-  type?: "normal" | "secondary";
+  type?: "normal" | "secondary" | "tertiary";
   icon?: ReactElement;
   size?: "sm" | "lg";
   text: string;
@@ -19,7 +19,11 @@ const Button = ({
     <button
       onClick={onClick}
       className={`button ${
-        type === "normal" ? "button-normal" : "button-secondary"
+        type === "normal"
+          ? "button-normal"
+          : type === "tertiary"
+          ? "button-tertiary"
+          : "button-secondary"
       } ${size === "sm" ? "button-sm" : ""}`}
     >
       {text}

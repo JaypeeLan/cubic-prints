@@ -35,8 +35,8 @@ const Header = () => {
 
   return (
     <header className="header">
-      <a href="/">
-        <img src={Logo} alt="logo" width={136} height={40} />
+      <a href="/" className="header-logo">
+        <img src={Logo} alt="logo" width={"100%"} height={40} />
       </a>
 
       <div className={`nav ${isMenuOpen ? "nav-open" : ""}`}>
@@ -48,7 +48,7 @@ const Header = () => {
       </div>
 
       <div className="header-controls">
-        <Button text="Get a Free Quote" onClick={() => {}} />
+        <Button text="Get a Free Quote" onClick={() => {}} type="tertiary" />
         <div
           className={`hamburger ${isMenuOpen ? "active" : ""}`}
           onClick={toggleMenu}

@@ -21,7 +21,7 @@ const Showcase = () => {
       </h2>
       <Slider data-aos="fade-up">
         {images.map((img, index) => (
-          <Card imgSrc={img} type="other" key={index} />
+          <Card imgSrc={img} type="other" key={index} imgWidth={300} />
         ))}
       </Slider>
 

@@ -16,6 +16,14 @@
   }
 }
 
+.header-logo {
+  width: 136px;
+
+  @media screen and (max-width: 060px) {
+    width: 100px;
+  }
+}
+
 .nav {
   color: #000;
   display: flex;
