@@ -47,7 +47,7 @@ const FaqCard = ({
   toggle: () => void;
 }) => {
   return (
-    <div className={`faq__card ${isOpen ? "open" : ""}`}>
+    <section className={`faq__card ${isOpen ? "open" : ""}`}>
       <div className="faq__card-top" onClick={toggle}>
         <p>{q}</p>
         <div style={{ cursor: "pointer" }}>
@@ -62,6 +62,6 @@ const FaqCard = ({
       <div className={`faq__card-ans ${isOpen ? "show" : ""}`}>
         <p>{a}</p>
       </div>
-    </div>
+    </section>
   );
 };

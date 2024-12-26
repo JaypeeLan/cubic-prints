@@ -14,7 +14,7 @@ const Showcase = () => {
   const images = [img1, img2, img3, img4, img5, img6];
 
   return (
-    <div className="showcase" id="featured">
+    <section className="showcase" id="featured">
       <h2>
         We’ve worked with some of Africa’s most exciting brands, delivering
         packaging that makes customers happy.
@@ -37,7 +37,7 @@ const Showcase = () => {
           onClick={() => {}}
         />
       </div>
-    </div>
+    </section>
   );
 };
 

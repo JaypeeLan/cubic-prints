@@ -3,7 +3,7 @@ import Card from "../Card";
 
 const Discover = () => {
   return (
-    <div className="discover">
+    <section className="discover">
       <h2>
         Discover what sets <br /> Cubic Prints apart
       </h2>
@@ -15,7 +15,7 @@ const Discover = () => {
             type="other"
             title={d.title}
             desc={d.desc}
-            imgWidth={390}
+            imgWidth={"100%"}
           />
         ))}
       </div>
@@ -24,7 +24,7 @@ const Discover = () => {
         When you choose Cubic Prints, you’re choosing more than packaging,
         you’re choosing excellence and affordability
       </p>
-    </div>
+    </section>
   );
 };
 

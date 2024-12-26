@@ -6,7 +6,7 @@ import customers from "../../assets/customers.png";
 
 const Hero = () => {
   return (
-    <div className="hero">
+    <section className="hero">
       <div className="hero__left">
         <div className="hero__left-one">
           <h1>
@@ -43,7 +43,7 @@ const Hero = () => {
       <div>
         <img src={heroImg} alt="hero" width={580} />
       </div>
-    </div>
+    </section>
   );
 };
 

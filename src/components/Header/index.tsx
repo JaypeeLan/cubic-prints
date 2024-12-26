@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Logo from "../../assets/CubicLogo.png";
 import Button from "../Button";
 import "./header.css";
@@ -22,20 +23,42 @@ const NavLinks = [
 ];
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
-    <div className="header">
+    <header className="header">
       <a href="/">
         <img src={Logo} alt="logo" width={136} height={40} />
       </a>
 
-      <div className="nav">
+      <div className={`nav ${isMenuOpen ? "nav-open" : ""}`}>
         {NavLinks.map((l) => (
-          <a href={l.link}>{l.name}</a>
+          <a key={l.name} href={l.link} onClick={handleLinkClick}>
+            {l.name}
+          </a>
         ))}
       </div>
 
-      <Button text="Get a Free Quote" onClick={() => {}} />
-    </div>
+      <div className="header-controls">
+        <Button text="Get a Free Quote" onClick={() => {}} />
+        <div
+          className={`hamburger ${isMenuOpen ? "active" : ""}`}
+          onClick={toggleMenu}
+        >
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
+      </div>
+    </header>
   );
 };
 

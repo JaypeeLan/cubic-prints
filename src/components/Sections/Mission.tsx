@@ -16,7 +16,9 @@ const Mission = () => {
           </p>
         </div>
 
-        <img src={people} alt="people" width={372} height={265} />
+        <div className="mission__img">
+          <img src={people} alt="people" width={"100%"} height={"100%"} />
+        </div>
       </div>
 
       <div className="mission__bottom">

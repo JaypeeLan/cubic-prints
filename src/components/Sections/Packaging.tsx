@@ -3,7 +3,7 @@ import { MissionCard } from "../Card";
 
 const Packaging = () => {
   return (
-    <div className="packaging">
+    <section className="packaging">
       <h2>Packaging is more than just a container for your products —</h2>
 
       <p className="body2">
@@ -21,7 +21,7 @@ const Packaging = () => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

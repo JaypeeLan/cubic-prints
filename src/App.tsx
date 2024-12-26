@@ -17,9 +17,9 @@ function App() {
     <>
       <Header />
       <Hero />
-      <Packaging />
       <Mission />
       <Services />
+      <Packaging />
       <Discover />
       <Showcase />
       <Brands />
