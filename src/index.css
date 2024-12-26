@@ -28,6 +28,7 @@
 
 body {
   background-color: #201e1e;
+  overflow-x: clip;
 }
 
 section {

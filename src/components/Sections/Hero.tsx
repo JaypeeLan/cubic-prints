@@ -40,8 +40,8 @@ const Hero = () => {
         </div>
       </div>
 
-      <div>
-        <img src={heroImg} alt="hero" width={580} />
+      <div className="hero__img">
+        <img src={heroImg} alt="hero" width={"100%"} height={"100%"} />
       </div>
     </section>
   );
