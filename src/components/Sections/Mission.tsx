@@ -6,7 +6,7 @@ import { MissionCard } from "../Card";
 
 const Mission = () => {
   return (
-    <section className="mission" id="about">
+    <section className="mission" id="about" data-aos="fade-up">
       <div className="mission__top">
         <div>
           <h2>90% of customers judge a product by their packaging</h2>

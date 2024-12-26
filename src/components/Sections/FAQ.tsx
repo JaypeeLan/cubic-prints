@@ -10,14 +10,14 @@ const FAQ = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <div className="faq">
+    <section className="faq">
       <div className="faq__inner">
-        <div className="faq__left">
+        <div className="faq__left" data-aos="fade-down">
           <h2>Do you have questions, we are here to help!</h2>
         </div>
 
         {/* ------ */}
-        <div className="faq__display">
+        <div className="faq__display" data-aos="fade-left">
           {FAQs.map((faq, i) => (
             <FaqCard
               key={i}
@@ -29,7 +29,7 @@ const FAQ = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

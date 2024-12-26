@@ -4,9 +4,10 @@ import "./slider.css";
 type SliderProps = {
   children: React.ReactNode;
   className?: string;
+  props?: unknown;
 };
 
-const Slider = ({ children, className = "" }: SliderProps) => {
+const Slider = ({ children, className = "", ...props }: SliderProps) => {
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -43,7 +44,7 @@ const Slider = ({ children, className = "" }: SliderProps) => {
   };
 
   return (
-    <div className={`slider-container ${className}`}>
+    <div className={`slider-container ${className}`} {...props}>
       {showLeftArrow && (
         <button
           onClick={() => scroll("left")}

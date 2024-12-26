@@ -6,15 +6,18 @@ import { TESTIMONIALS } from "../../data";
 const Testimonials = () => {
   return (
     <section id="testimonials" className="testimonials">
-      <h2>Don’t just take our word for it—hear from our happy customers</h2>
+      <h2 data-aos="fade-down">
+        Don’t just take our word for it—hear from our happy customers
+      </h2>
 
-      <Slider>
-        {TESTIMONIALS.map((t) => (
+      <Slider data-aos="fade-up">
+        {TESTIMONIALS.map((t, i) => (
           <TestimonialCard
             authorImg={person}
             authorName={t.name}
             authorTitle={t.title}
             comment={t.comment}
+            key={i}
           />
         ))}
       </Slider>

@@ -5,12 +5,19 @@ import Carousel from "../Slider";
 const Services = () => {
   return (
     <section className="services" id="services">
-      <h2>We specialize in creating packaging solutions for every need</h2>
+      <h2 data-aos="fade-down">
+        We specialize in creating packaging solutions for every need
+      </h2>
 
-      <Carousel>
+      <Carousel data-aos="fade-left">
         <div className="services__offered">
           {SERVICES.map((s) => (
-            <Card imgSrc={s.imgSrc} title={s.title} desc={s.desc} />
+            <Card
+              imgSrc={s.imgSrc}
+              title={s.title}
+              desc={s.desc}
+              key={s.imgSrc}
+            />
           ))}
         </div>
       </Carousel>

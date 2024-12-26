@@ -18,7 +18,7 @@ const Card = ({
 }: CardProps) => {
   return (
     <div className="card">
-      <img src={imgSrc} alt={title} width={imgWidth} />
+      <img src={imgSrc} alt={title} width={imgWidth} loading="lazy" />
       {type === "normal" ? <h3>{title}</h3> : <h4>{title}</h4>}
       {type === "normal" ? <p>{desc}</p> : <span>{desc}</span>}
     </div>

@@ -2,7 +2,7 @@ import mtn from "../../assets/mtn.png";
 import airtel from "../../assets/airtel.png";
 const Brands = () => {
   return (
-    <section className="brand">
+    <section className="brand" data-aos="fade-up">
       <div className="brands">
         <p className="brands-title">Brands Highlight</p>
         <div className="brands-imgs">

@@ -11,21 +11,28 @@ import Showcase from "./components/Sections/Showcase";
 import Testimonials from "./components/Sections/Testimonials";
 import "./App.css";
 import Brands from "./components/Sections/Brands";
+import SEO from "./components/SEO";
+import AnimatedWrapper from "./components/AnimatedWrapper";
 
 function App() {
   return (
     <>
+      <SEO />
       <Header />
-      <Hero />
-      <Mission />
-      <Services />
-      <Packaging />
-      <Discover />
-      <Showcase />
-      <Brands />
-      <Testimonials />
-      <Cta />
-      <FAQ />
+      <AnimatedWrapper>
+        <>
+          <Hero />
+          <Mission />
+          <Services />
+          <Packaging />
+          <Discover />
+          <Showcase />
+          <Brands />
+          <Testimonials />
+          <Cta />
+          <FAQ />
+        </>
+      </AnimatedWrapper>
       <Footer />
     </>
   );

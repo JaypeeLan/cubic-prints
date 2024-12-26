@@ -15,11 +15,11 @@ const Showcase = () => {
 
   return (
     <section className="showcase" id="featured">
-      <h2>
+      <h2 data-aos="fade-down">
         We’ve worked with some of Africa’s most exciting brands, delivering
         packaging that makes customers happy.
       </h2>
-      <Slider>
+      <Slider data-aos="fade-up">
         {images.map((img, index) => (
           <Card imgSrc={img} type="other" key={index} />
         ))}

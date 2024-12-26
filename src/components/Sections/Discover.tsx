@@ -4,11 +4,11 @@ import Card from "../Card";
 const Discover = () => {
   return (
     <section className="discover">
-      <h2>
+      <h2 data-aos="fade-down">
         Discover what sets <br /> Cubic Prints apart
       </h2>
 
-      <div className="discover__cards">
+      <div className="discover__cards" data-aos="fade-up">
         {DISCOVER.map((d) => (
           <Card
             imgSrc={d.imgSrc}
@@ -16,6 +16,7 @@ const Discover = () => {
             title={d.title}
             desc={d.desc}
             imgWidth={"100%"}
+            key={d.title}
           />
         ))}
       </div>
