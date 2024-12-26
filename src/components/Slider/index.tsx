@@ -57,7 +57,7 @@ const Slider = ({ children, className = "", ...props }: SliderProps) => {
   const scroll = (direction: "left" | "right") => {
     if (!containerRef.current) return;
 
-    const scrollAmount = containerRef.current.clientWidth * 0.8;
+    const scrollAmount = containerRef.current.clientWidth * 0.5;
     const newScrollLeft =
       containerRef.current.scrollLeft +
       (direction === "left" ? -scrollAmount : scrollAmount);

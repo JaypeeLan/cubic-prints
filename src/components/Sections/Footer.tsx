@@ -1,6 +1,6 @@
 import Logo from "../../assets/logoWhite.png";
 import linkedinIcon from "../../assets/linkedin.png";
-import fb from "../../assets/fb.png";
+import x from "../../assets/x.png";
 import ig from "../../assets/ig.png";
 import message from "../../assets/message.png";
 import phone from "../../assets/phone.png";
@@ -15,13 +15,22 @@ const Footer = () => {
             <img src={Logo} alt="logo" width={214} height={52} />
 
             <div className="footer-socialIcons">
-              <a href="http://">
+              <a
+                href="https://www.instagram.com/cubicprints.africa?igsh=MWg1bndldjBtMnVkNA=="
+                target="_blank"
+              >
                 <img width={29} height={29} src={ig} alt="instagram" />
               </a>
-              <a href="http://">
-                <img width={29} height={29} src={fb} alt="facebook" />
+              <a
+                href="https://x.com/Cubicprints20?t=vKejE9D2dndsl9U1bxDUZA&s=09"
+                target="_blank"
+              >
+                <img width={29} height={29} src={x} alt="x" />
               </a>
-              <a href="http://">
+              <a
+                href="https://www.linkedin.com/company/cubic-prints-and-crafts-ltd/"
+                target="_blank"
+              >
                 <img width={29} height={29} src={linkedinIcon} alt="linkedin" />
               </a>
             </div>
@@ -30,10 +39,14 @@ const Footer = () => {
           <div className="footer-top__right">
             <span>Contact Us</span>
 
-            <a href="tel:+234 812 345 6789" className="footer-tel">
-              +234 812 345 6789
+            <a href="tel:+234 913 549 1212" className="footer-tel">
+              +234 913 549 1212
             </a>
-            <a href="mailto:hello@cubicprints.africa" className="footer-mail">
+            <a
+              href="mailto:hello@cubicprints.africa"
+              className="footer-mail"
+              target="_blank"
+            >
               hello@cubicprints.africa
             </a>
             <p className="footer-addr">
@@ -46,10 +59,10 @@ const Footer = () => {
         <div className="footer-bottom">
           <>
             <div className="footer-bottom__socials">
-              <a href="  ">
+              <a href="tel:+234 913 549 1212">
                 <img src={phone} alt="phone" width={64} height={64} />
               </a>
-              <a href=" ">
+              <a href="mailto:hello@cubicprints.africa" target="_blank">
                 <img src={message} alt="message" width={64} height={64} />
               </a>
             </div>

@@ -164,19 +164,43 @@ export const TESTIMONIALS = [
 export const FAQs = [
   {
     q: "What services do you offer?",
-    a: "We cater to food, retail, cosmetics, pharmaceuticals, and more. We cater to food, retail, cosmetics, pharmaceuticals, and more We cater to food, retail, cosmetics, pharmaceuticals, and more We cater to food, retail, cosmetics, pharmaceuticals, and more",
+    a: "We specialize in custom box branding and packaging design, including custom box printing, logo integration, and eco-friendly packaging solutions.",
   },
   {
     q: "Who can use your services?",
-    a: "We cater to food, retail, cosmetics, pharmaceuticals, and more.",
+    a: "Our services cater to businesses of all sizes, including startups, small businesses, and large enterprises across industries such as retail, e-commerce, food, beauty, and more.",
   },
   {
-    q: "Who can use your services?",
-    a: "We cater to food, retail, cosmetics, pharmaceuticals, and more.",
+    q: "Do you have a minimum order quantity (MOQ)?",
+    a: "Yes, our MOQ varies depending on the type of box and design complexity. Please contact us for specific details regarding your project.",
   },
   {
-    q: "Who can use your services?",
-    a: "We cater to food, retail, cosmetics, pharmaceuticals, and more.",
+    q: "How much do your boxes cost?",
+    a: "Our boxes are bespoke, and made to your preferred dimensions and specifications. Pricing is unique to each order. Please reach out for a personalized quote.",
+  },
+  {
+    q: "Can I use my own design, or do you offer design services?",
+    a: "You can either provide your own design or work with our expert graphic design team to create a custom design tailored to your brand's unique needs.",
+  },
+  {
+    q: "How much does custom box branding cost?",
+    a: "Pricing depends on factors such as the size, material, printing method, order quantity, and additional features. Contact us for a personalized quote.",
+  },
+  {
+    q: "Can I see a sample of my box before placing a large order?",
+    a: "Absolutely! We provide digital 3D mockups for approval, and if needed, a physical prototype can be arranged at an additional cost before mass production.",
+  },
+  {
+    q: "Can I reorder the same design in the future?",
+    a: "Yes! We keep your designs on file, making reordering quick and simple.",
+  },
+  {
+    q: "What is your production turnaround time?",
+    a: "Standard production typically takes 7-10 working days for boxes, 3-5 working days for nylons, and 3 weeks for woven labels, depending on the complexity of the order. Expedited options may be available upon request.",
+  },
+  {
+    q: "How are the boxes packaged for delivery?",
+    a: "We ensure that all boxes are carefully packaged to prevent damage during transit.",
   },
 ];
 

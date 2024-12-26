@@ -24,13 +24,17 @@ const Hero = () => {
           <Button
             text="Get a Free Quote"
             icon={<img src={receipt} width={20} height={20} />}
-            onClick={() => {}}
+            onClick={() =>
+              window.open("https://wa.me/message/6VBDI2KDYA2KF1", "_blank")
+            }
           />
           <Button
             type="secondary"
             text="View Our Portfolio"
             icon={<img src={film} width={20} height={20} />}
-            onClick={() => {}}
+            onClick={() =>
+              window.open("https://linktr.ee/cubicprintsandcrafts", "_blank")
+            }
           />
         </div>
 

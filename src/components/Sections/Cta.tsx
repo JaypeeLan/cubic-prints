@@ -8,7 +8,9 @@ const Cta = () => {
 
       <Button
         text="Get a Free Quote"
-        onClick={() => {}}
+        onClick={() =>
+          window.open("https://wa.me/message/6VBDI2KDYA2KF1", "_blank")
+        }
         icon={<img src={receipt} width={20} height={20} />}
       />
     </section>

@@ -48,7 +48,13 @@ const Header = () => {
       </div>
 
       <div className="header-controls">
-        <Button text="Get a Free Quote" onClick={() => {}} type="tertiary" />
+        <Button
+          text="Get a Free Quote"
+          onClick={() =>
+            window.open("https://wa.me/message/6VBDI2KDYA2KF1", "_blank")
+          }
+          type="tertiary"
+        />
         <div
           className={`hamburger ${isMenuOpen ? "active" : ""}`}
           onClick={toggleMenu}

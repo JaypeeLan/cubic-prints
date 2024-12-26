@@ -9,7 +9,7 @@ const Packaging = () => {
   useEffect(() => {
     // Set initial width
     const handleResize = () => {
-      setImageWidth(window.innerWidth <= 600 ? 350 : 282);
+      setImageWidth(window.innerWidth <= 600 ? 300 : 282);
     };
 
     // Set initial width on mount
