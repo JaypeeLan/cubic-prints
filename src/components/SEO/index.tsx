@@ -23,8 +23,8 @@ const SEO = () => (
       property="og:description"
       content="Explore Cubic Prints' innovative packaging solutions. With over 5 years of expertise and 500,000+ satisfied customers, we're Africa's most preferred packaging brand."
     />
-    <meta property="og:image" content="/path-to-your-image.jpg" />
-    <meta property="og:url" content="https://www.cubicprints.com" />
+    <meta property="og:image" content="/web-share.png" />
+    <meta property="og:url" content="https://cubic-prints.vercel.app" />
     <meta property="og:type" content="website" />
 
     {/* Twitter Card Tags */}
@@ -37,7 +37,7 @@ const SEO = () => (
       name="twitter:description"
       content="Explore Cubic Prints' innovative packaging solutions. With over 5 years of expertise and 500,000+ satisfied customers, we're Africa's most preferred packaging brand."
     />
-    <meta name="twitter:image" content="/path-to-your-image.jpg" />
+    <meta name="twitter:image" content="/web-share.png" />
 
     {/* Structured Data */}
     <script type="application/ld+json">
