@@ -79,7 +79,6 @@
   justify-content: space-between;
   margin-bottom: 120px;
   gap: 20px;
-  flex-wrap: wrap;
 
   @media screen and (max-width: 980px) {
     flex-direction: column;
@@ -283,6 +282,13 @@
   gap: 40px;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media screen and (max-width: 650px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    place-items: center;
+  }
 }
 
 /* testimonials */
@@ -336,7 +342,7 @@
 .faq__inner {
   background-color: #fff;
   display: flex;
-  align-items: center;
+
   justify-content: space-between;
   margin: 0 120px;
   padding: 80px 0;
