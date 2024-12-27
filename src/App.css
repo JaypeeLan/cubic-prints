@@ -1,6 +1,7 @@
 .hero {
   background: url("/src/assets/bg.png") no-repeat center center;
   background-size: cover;
+  background-color: yellow;
   border-radius: 16px;
   padding: 80px;
   display: flex;
