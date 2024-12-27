@@ -342,15 +342,15 @@
 .faq__inner {
   background-color: #fff;
   display: flex;
-
   justify-content: space-between;
+  gap: 40px;
   margin: 0 120px;
   padding: 80px 0;
 
   @media screen and (max-width: 980px) {
     margin: 0;
     flex-direction: column;
-    gap: 40px;
+
     padding: 40px 24px 80px 24px;
     align-items: flex-start;
   }
