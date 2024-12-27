@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet";
 
 const SEO = () => (
   <Helmet>
-    {/* General Meta Tags */}
     <title>Cubic Prints - Excellence in Packaging</title>
     <meta
       name="description"
@@ -14,7 +13,7 @@ const SEO = () => (
     />
     <meta name="author" content="Cubic Prints" />
 
-    {/* Open Graph Tags (for social media sharing) */}
+    {/* Open Graph */}
     <meta
       property="og:title"
       content="Cubic Prints - Excellence in Packaging"
@@ -23,11 +22,14 @@ const SEO = () => (
       property="og:description"
       content="Explore Cubic Prints' innovative packaging solutions. With over 5 years of expertise and 500,000+ satisfied customers, we're Africa's most preferred packaging brand."
     />
-    <meta property="og:image" content="/web-share.png" />
-    <meta property="og:url" content="https://cubic-prints.vercel.app" />
+    <meta
+      property="og:image"
+      content="https://cubicprints.africa/web-share.png"
+    />
+    <meta property="og:url" content="https://cubicprints.africa/" />
     <meta property="og:type" content="website" />
 
-    {/* Twitter Card Tags */}
+    {/* Twitter */}
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -37,7 +39,10 @@ const SEO = () => (
       name="twitter:description"
       content="Explore Cubic Prints' innovative packaging solutions. With over 5 years of expertise and 500,000+ satisfied customers, we're Africa's most preferred packaging brand."
     />
-    <meta name="twitter:image" content="/web-share.png" />
+    <meta
+      name="twitter:image"
+      content="https://cubicprints.africa/web-share.png"
+    />
 
     {/* Structured Data */}
     <script type="application/ld+json">
@@ -46,8 +51,8 @@ const SEO = () => (
           "@context": "https://schema.org",
           "@type": "Organization",
           "name": "Cubic Prints",
-          "url": "https://www.cubicprints.com",
-          "logo": "https://www.cubicprints.com/logo.png",
+          "url": "https://cubicprints.africa/",
+          "logo": "https://cubicprints.africa/favicon.png",
           "description": "Delivering excellent packaging solutions in record time.",
           "sameAs": [
             "https://www.facebook.com/cubicprints",
