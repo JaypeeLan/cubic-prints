@@ -29,7 +29,7 @@ const SEO = () => {
       />
       <meta
         property="og:description"
-        content="Explore Cubic Prints' innovative packaging solutions. With over 5 years of expertise and 500,000+ satisfied customers, we're Africa's most preferred packaging brand."
+        content="Explore Cubic Prints' innovative packaging solutions. With over 5 years of expertise and 5,000+ satisfied customers, we're Africa's most preferred packaging brand."
       />
       <meta property="og:image" content={shareImageUrl} />
       <meta property="og:image:type" content="image/png" />
@@ -47,7 +47,7 @@ const SEO = () => {
       />
       <meta
         name="twitter:description"
-        content="Explore Cubic Prints' innovative packaging solutions. With over 5 years of expertise and 500,000+ satisfied customers, we're Africa's most preferred packaging brand."
+        content="Explore Cubic Prints' innovative packaging solutions. With over 5 years of expertise and 5,000+ satisfied customers, we're Africa's most preferred packaging brand."
       />
       <meta name="twitter:image" content={shareImageUrl} />
       <meta

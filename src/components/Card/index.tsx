@@ -61,15 +61,16 @@ interface TestimonialCardProps {
   comment: string;
   authorImg: string;
   authorName: string;
-  authorTitle: string;
+
+  // authorTitle: string;
 }
 
 export const TestimonialCard = ({
   comment,
   authorImg,
   authorName,
-  authorTitle,
-}: TestimonialCardProps) => {
+}: // authorTitle,
+TestimonialCardProps) => {
   return (
     <div className="testimonialCard">
       <img
@@ -79,13 +80,15 @@ export const TestimonialCard = ({
         height={51.85}
         className="testimonialCard__quoteImg"
       />
-      <p className="testimonialCard__comment">{comment}</p>
+      <div className="testimonialCard__content">
+        <p className="testimonialCard__comment">{comment}</p>
 
-      <div className="testimonialCard__author">
-        <img src={authorImg} alt={authorName} width={80} height={80} />
-        <div>
-          <p className="testimonialCard__name">{authorName}</p>
-          <span className="testimonialCard__title">{authorTitle}</span>
+        <div className="testimonialCard__author">
+          <img src={authorImg} alt={authorName} width={80} height={80} />
+          <div>
+            <p className="testimonialCard__name">{authorName}</p>
+            {/* <span className="testimonialCard__title">{authorTitle}</span> */}
+          </div>
         </div>
       </div>
     </div>

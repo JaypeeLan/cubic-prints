@@ -1,5 +1,4 @@
 import Slider from "../Slider";
-import person from "../../assets/person.png";
 import { TestimonialCard } from "../Card";
 import { TESTIMONIALS } from "../../data";
 
@@ -13,9 +12,9 @@ const Testimonials = () => {
       <Slider data-aos="fade-up">
         {TESTIMONIALS.map((t, i) => (
           <TestimonialCard
-            authorImg={person}
+            authorImg={t.authorImg}
             authorName={t.name}
-            authorTitle={t.title}
+            // authorTitle={t.title}
             comment={t.comment}
             key={i}
           />

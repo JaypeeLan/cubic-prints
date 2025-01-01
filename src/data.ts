@@ -19,6 +19,11 @@ import pack2 from "../src/assets/pack2.png";
 import pack3 from "../src/assets/pack3.png";
 import pack4 from "../src/assets/pack4.png";
 
+// ----------------------------------------------------------------
+import grace from "../src/assets/grace.png";
+import daniel from "../src/assets/daniel.png";
+import zara from "../src/assets/zara.png";
+
 export const SERVICES = [
   {
     imgSrc: retailImg,
@@ -83,81 +88,24 @@ export const DISCOVER = [
 export const TESTIMONIALS = [
   {
     comment:
-      "Lorem ipsum dolor sit amet consectetur. Tortor libero sit bibendum at massa morbi ac. Viverra neque gravida luctus eu neque non lacus dolor. Gravida faucibus diam arcu nunc morbi eget vitae leo amet. Turpis pharetra convallis tempor nulla ut.",
-    name: "Femi Macaulay",
-    title: "COO, Cubic Prints",
+      "We’ve had an excellent experience working with Cubic Prints. Their quality is outstanding, their responsiveness is top-notch, and their packaging solutions perfectly align with the needs of my catering business.",
+    name: "Zara Adebayo",
+    authorImg: zara,
+    // title: "COO, Cubic Prints",
   },
   {
     comment:
-      "Lorem ipsum dolor sit amet consectetur. Tortor libero sit bibendum at massa morbi ac. Viverra neque gravida luctus eu neque non lacus dolor. Gravida faucibus diam arcu nunc morbi eget vitae leo amet. Turpis pharetra convallis tempor nulla ut.",
-    name: "Femi Macaulay",
-    title: "COO, Cubic Prints",
+      "At first I wasn't sure about an online order but I was happily surprised with good communication and multiple rounds of drafts that took place prior to approval of the production. The printed packages came in great quality and I'm very grateful!",
+    name: "Daniel Osei",
+    authorImg: daniel,
+    // title: "COO, Cubic Prints",
   },
   {
     comment:
-      "Lorem ipsum dolor sit amet consectetur. Tortor libero sit bibendum at massa morbi ac. Viverra neque gravida luctus eu neque non lacus dolor. Gravida faucibus diam arcu nunc morbi eget vitae leo amet. Turpis pharetra convallis tempor nulla ut.",
-    name: "Femi Macaulay",
-    title: "COO, Cubic Prints",
-  },
-  {
-    comment:
-      "Lorem ipsum dolor sit amet consectetur. Tortor libero sit bibendum at massa morbi ac. Viverra neque gravida luctus eu neque non lacus dolor. Gravida faucibus diam arcu nunc morbi eget vitae leo amet. Turpis pharetra convallis tempor nulla ut.",
-    name: "Femi Macaulay",
-    title: "COO, Cubic Prints",
-  },
-  {
-    comment:
-      "Lorem ipsum dolor sit amet consectetur. Tortor libero sit bibendum at massa morbi ac. Viverra neque gravida luctus eu neque non lacus dolor. Gravida faucibus diam arcu nunc morbi eget vitae leo amet. Turpis pharetra convallis tempor nulla ut.",
-    name: "Femi Macaulay",
-    title: "COO, Cubic Prints",
-  },
-  {
-    comment:
-      "Lorem ipsum dolor sit amet consectetur. Tortor libero sit bibendum at massa morbi ac. Viverra neque gravida luctus eu neque non lacus dolor. Gravida faucibus diam arcu nunc morbi eget vitae leo amet. Turpis pharetra convallis tempor nulla ut.",
-    name: "Femi Macaulay",
-    title: "COO, Cubic Prints",
-  },
-  {
-    comment:
-      "Lorem ipsum dolor sit amet consectetur. Tortor libero sit bibendum at massa morbi ac. Viverra neque gravida luctus eu neque non lacus dolor. Gravida faucibus diam arcu nunc morbi eget vitae leo amet. Turpis pharetra convallis tempor nulla ut.",
-    name: "Femi Macaulay",
-    title: "COO, Cubic Prints",
-  },
-  {
-    comment:
-      "Lorem ipsum dolor sit amet consectetur. Tortor libero sit bibendum at massa morbi ac. Viverra neque gravida luctus eu neque non lacus dolor. Gravida faucibus diam arcu nunc morbi eget vitae leo amet. Turpis pharetra convallis tempor nulla ut.",
-    name: "Femi Macaulay",
-    title: "COO, Cubic Prints",
-  },
-  {
-    comment:
-      "Lorem ipsum dolor sit amet consectetur. Tortor libero sit bibendum at massa morbi ac. Viverra neque gravida luctus eu neque non lacus dolor. Gravida faucibus diam arcu nunc morbi eget vitae leo amet. Turpis pharetra convallis tempor nulla ut.",
-    name: "Femi Macaulay",
-    title: "COO, Cubic Prints",
-  },
-  {
-    comment:
-      "Lorem ipsum dolor sit amet consectetur. Tortor libero sit bibendum at massa morbi ac. Viverra neque gravida luctus eu neque non lacus dolor. Gravida faucibus diam arcu nunc morbi eget vitae leo amet. Turpis pharetra convallis tempor nulla ut.",
-    name: "Femi Macaulay",
-    title: "COO, Cubic Prints",
-  },
-  {
-    comment:
-      "Lorem ipsum dolor sit amet consectetur. Tortor libero sit bibendum at massa morbi ac. Viverra neque gravida luctus eu neque non lacus dolor. Gravida faucibus diam arcu nunc morbi eget vitae leo amet. Turpis pharetra convallis tempor nulla ut.",
-    name: "Femi Macaulay",
-    title: "COO, Cubic Prints",
-  },
-  {
-    comment:
-      "Lorem ipsum dolor sit amet consectetur. Tortor libero sit bibendum at massa morbi ac. Viverra neque gravida luctus eu neque non lacus dolor. Gravida faucibus diam arcu nunc morbi eget vitae leo amet. Turpis pharetra convallis tempor nulla ut.",
-    name: "Femi Macaulay",
-    title: "COO, Cubic Prints",
-  },
-  {
-    comment:
-      "Lorem ipsum dolor sit amet consectetur. Tortor libero sit bibendum at massa morbi ac. Viverra neque gravida luctus eu neque non lacus dolor. Gravida faucibus diam arcu nunc morbi eget vitae leo amet. Turpis pharetra convallis tempor nulla ut.",
-    name: "Femi Macaulay",
-    title: "COO, Cubic Prints",
+      "We are pleased with the service provided by Cubic Prints. Their response time was impressive, and the black magnetic boxes we received were of exceptional quality, exuding luxury. The boxes are easy to fold and assemble, and the matching black ribbon adds the perfect finishing touch. We’re proud to be loyal, returning customers!",
+    name: "Grace Kinda",
+    authorImg: grace,
+    // title: "COO, Cubic Prints",
   },
 ];
 
