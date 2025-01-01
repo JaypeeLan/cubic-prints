@@ -295,6 +295,10 @@
 .brands-img {
   width: 235px;
   height: auto;
+
+  @media screen and (max-width: 650px) {
+    width: 130px;
+  }
 }
 
 /* testimonials */
