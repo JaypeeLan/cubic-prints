@@ -84,7 +84,9 @@ TestimonialCardProps) => {
         <p className="testimonialCard__comment">{comment}</p>
 
         <div className="testimonialCard__author">
-          <img src={authorImg} alt={authorName} width={80} height={80} />
+          <div>
+            <img src={authorImg} alt={authorName} width={80} height={80} />
+          </div>
           <div>
             <p className="testimonialCard__name">{authorName}</p>
             {/* <span className="testimonialCard__title">{authorTitle}</span> */}

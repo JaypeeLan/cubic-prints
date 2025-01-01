@@ -292,6 +292,11 @@
   }
 }
 
+.brands-img {
+  width: 235px;
+  height: auto;
+}
+
 /* testimonials */
 .testimonials {
   padding-top: 40px;
