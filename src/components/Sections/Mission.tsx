@@ -36,7 +36,7 @@ const Mission = () => {
           imgSrc={satisfied}
           children={
             <p>
-              And we're already on the path, with
+              And we're already on the path, with{" "}
               <strong>5,000+ satisfied customers</strong> across industries like
               retail, food, cosmetics, and more.
             </p>

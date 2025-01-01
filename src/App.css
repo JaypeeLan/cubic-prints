@@ -290,14 +290,6 @@
     gap: 20px;
     place-items: center;
   }
-
-  img {
-    width: 238px;
-
-    @media screen and (max-width: 650px) {
-      width: 130px;
-    }
-  }
 }
 
 /* testimonials */
