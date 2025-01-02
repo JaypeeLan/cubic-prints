@@ -14,7 +14,7 @@ const Testimonials = () => {
           <TestimonialCard
             authorImg={t.authorImg}
             authorName={t.name}
-            // authorTitle={t.title}
+            authorTitle={t?.title}
             comment={t.comment}
             key={i}
           />

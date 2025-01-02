@@ -23,6 +23,7 @@ import pack4 from "../src/assets/pack4.png";
 import grace from "../src/assets/grace.png";
 import daniel from "../src/assets/daniel.png";
 import zara from "../src/assets/zara.png";
+import j2j from "../src/assets/j2j.png";
 
 export const SERVICES = [
   {
@@ -88,24 +89,28 @@ export const DISCOVER = [
 export const TESTIMONIALS = [
   {
     comment:
+      "Two years working with Cubic and we also get value for our money. Wowing our customers everytime with amazing work, quality materials and beautiful finishes J2JSUPPLIES is completely impressed. The customer service is a plus 🤝 Thank you Cubic Prints!",
+    authorImg: j2j,
+    name: "J2J SUPPLIES,",
+    title: "Liberia",
+  },
+  {
+    comment:
       "We’ve had an excellent experience working with Cubic Prints. Their quality is outstanding, their responsiveness is top-notch, and their packaging solutions perfectly align with the needs of my catering business.",
     name: "Zara Adebayo",
     authorImg: zara,
-    // title: "COO, Cubic Prints",
   },
   {
     comment:
       "At first I wasn't sure about an online order but I was happily surprised with good communication and multiple rounds of drafts that took place prior to approval of the production. The printed packages came in great quality and I'm very grateful!",
     name: "Daniel Osei",
     authorImg: daniel,
-    // title: "COO, Cubic Prints",
   },
   {
     comment:
       "We are pleased with the service provided by Cubic Prints. Their response time was impressive, and the black magnetic boxes we received were of exceptional quality, exuding luxury. The boxes are easy to fold and assemble, and the matching black ribbon adds the perfect finishing touch. We’re proud to be loyal, returning customers!",
     name: "Grace Kinda",
     authorImg: grace,
-    // title: "COO, Cubic Prints",
   },
 ];
 
