@@ -89,7 +89,7 @@ export const DISCOVER = [
 export const TESTIMONIALS = [
   {
     comment:
-      "Two years working with Cubic and we also get value for our money. Wowing our customers everytime with amazing work, quality materials and beautiful finishes J2JSUPPLIES is completely impressed. The customer service is a plus 🤝 Thank you Cubic Prints!",
+      "Two years working with Cubic and we always get value for our money. Wowing our customers everytime with amazing work, quality materials and beautiful finishes J2JSUPPLIES is completely impressed. The customer service is a plus 🤝 Thank you Cubic Prints!",
     authorImg: j2j,
     name: "J2J SUPPLIES,",
     title: "Liberia",
