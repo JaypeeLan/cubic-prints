@@ -34,7 +34,9 @@ interface MissionCardProps {
   desc?: string;
   children?: ReactElement;
   imageWidth?: number | string;
-  imageHeight?: number;
+  imageHeight?: number | string;
+  maxWidth?: string;
+  date?: string;
 }
 
 export const MissionCard = ({
@@ -94,6 +96,19 @@ TestimonialCardProps) => {
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+export const BlogCard = ({ imgSrc, title, desc, date }: MissionCardProps) => {
+  return (
+    <div className="blogCard">
+      <div className="blogCard__img">
+        <img src={imgSrc} alt={title} width={373} height={264} />
+      </div>
+      <h3>{title}</h3>
+      <p>{desc}</p>
+      <span>{date}</span>
     </div>
   );
 };

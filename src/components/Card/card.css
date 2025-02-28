@@ -78,3 +78,22 @@
   line-height: 24px;
   letter-spacing: -0.03em;
 }
+
+.blogCard {
+  width: 100%;
+  max-width: 373px;
+  color: #fff;
+}
+.blogCard img {
+  border-radius: 16px;
+}
+
+.blogCard p {
+  color: #dadada;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+.blogCard span {
+  color: #dadada;
+  font-size: 12px;
+}

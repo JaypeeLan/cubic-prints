@@ -5,6 +5,7 @@ interface ButtonProps {
   icon?: ReactElement;
   size?: "sm" | "lg";
   text: string;
+  style?: React.CSSProperties;
   onClick: () => void;
 }
 
@@ -14,6 +15,8 @@ const Button = ({
   icon,
   onClick,
   size,
+  style,
+  ...rest
 }: ButtonProps) => {
   return (
     <button
@@ -22,9 +25,11 @@ const Button = ({
         type === "normal"
           ? "button-normal"
           : type === "tertiary"
-          ? "button-tertiary"
-          : "button-secondary"
+            ? "button-tertiary"
+            : "button-secondary"
       } ${size === "sm" ? "button-sm" : ""}`}
+      style={style}
+      {...rest}
     >
       {text}
       {icon && <>{icon}</>}

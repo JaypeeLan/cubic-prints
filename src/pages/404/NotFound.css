@@ -1,0 +1,36 @@
+.not-found-container {
+  text-align: center;
+  padding: 50px;
+  background: #f8f9fa;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-code {
+  font-size: 100px;
+  font-weight: bold;
+  color: #ff4757;
+  margin-bottom: 10px;
+}
+
+.error-message {
+  font-size: 20px;
+  color: #2f3640;
+  margin-bottom: 20px;
+}
+
+.home-link {
+  text-decoration: none;
+  padding: 10px 20px;
+  background: #ff4757;
+  color: #fff;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+.home-link:hover {
+  background: #e84118;
+}

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Logo from "../../assets/CubicLogo.png";
 import Button from "../Button";
 import "./header.css";
+import LogoWhite from "../../assets/logoWhite.png";
 
 const NavLinks = [
   {
@@ -20,9 +21,13 @@ const NavLinks = [
     name: "Testimonials",
     link: "#testimonials",
   },
+  {
+    name: "Blog",
+    link: "/blog",
+  },
 ];
 
-const Header = () => {
+const Header = ({ mode }: { mode?: string }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -33,8 +38,40 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  if (mode === "dark") {
+    return (
+      <header className={`header header-dark`}>
+        <div className="header-dark__l">
+          <div>
+            <a href="/" className="header-logo">
+              <img src={LogoWhite} alt="logo" width={"100%"} height={40} />
+            </a>
+          </div>
+
+          <>
+            <p>THE CUBIC BLOG</p>
+          </>
+        </div>
+
+        <div className="header-controls">
+          <Button
+            text="Get a Free Quote"
+            onClick={() =>
+              window.open("https://wa.me/message/6VBDI2KDYA2KF1", "_blank")
+            }
+            type="normal"
+            style={{
+              backgroundColor: "white",
+              color: "#222222",
+            }}
+          />
+        </div>
+      </header>
+    );
+  }
+
   return (
-    <header className="header">
+    <header className={`header `}>
       <a href="/" className="header-logo">
         <img src={Logo} alt="logo" width={"100%"} height={40} />
       </a>
