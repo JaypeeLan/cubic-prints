@@ -737,3 +737,11 @@
     font-size: 0.85rem;
   }
 }
+
+.paragraph-text {
+  padding: 5px 0;
+}
+
+.heading-medium {
+  padding: 2px 0;
+}
