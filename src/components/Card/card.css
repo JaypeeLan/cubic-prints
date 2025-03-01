@@ -86,6 +86,7 @@
 }
 .blogCard img {
   border-radius: 16px;
+  margin-bottom: 24px;
 }
 
 .blogCard p {
@@ -96,4 +97,5 @@
 .blogCard span {
   color: #dadada;
   font-size: 12px;
+  text-transform: uppercase;
 }
