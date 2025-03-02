@@ -32,12 +32,23 @@
   border-right: 1px solid #999999;
   padding-right: 24px;
   margin-right: 24px;
+
+  @media screen and (max-width: 768px) {
+    border: none;
+    padding-right: 0px;
+  }
+}
+
+.header-dark__l p {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .header-logo {
   width: 136px;
 
-  @media screen and (max-width: 060px) {
+  @media screen and (max-width: 768px) {
     width: 100px;
   }
 }
@@ -77,8 +88,14 @@
   }
 }
 
+.nav-dark {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
 .nav.nav-open {
-  max-height: 60vh;
+  max-height: 70vh;
   opacity: 1;
 }
 
@@ -117,5 +134,11 @@
 
   @media screen and (max-width: 960px) {
     display: flex;
+  }
+}
+
+.hamburger-dark {
+  .line {
+    background-color: #fff;
   }
 }

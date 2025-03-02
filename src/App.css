@@ -532,14 +532,22 @@
   justify-content: space-between;
   gap: 40px;
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 16px;
+    margin: 0 16px;
+  }
 }
 
-.blog__blog img {
-  border-radius: 16px;
+.blog__blog-article {
+  @media screen and (max-width: 768px) {
+    order: 1;
+  }
 }
-
 .blog__blog-article h1 {
   font-size: 48px;
+  margin-bottom: 8px;
 }
 
 .blog__blog-article p {
@@ -548,6 +556,12 @@
 
 .blog__blog-article span {
   color: #808080;
+}
+
+.blog__blog img {
+  border-radius: 16px;
+  max-width: 464px;
+  height: 320px;
 }
 
 .blog-cards {

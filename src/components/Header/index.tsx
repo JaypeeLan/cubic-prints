@@ -66,6 +66,23 @@ const Header = ({ mode }: { mode?: string }) => {
             }}
           />
         </div>
+
+        <div className={`nav nav-dark ${isMenuOpen ? "nav-open" : ""}`}>
+          {NavLinks.map((l) => (
+            <a key={l.name} href={l.link} onClick={handleLinkClick}>
+              {l.name}
+            </a>
+          ))}
+        </div>
+
+        <div
+          className={`hamburger hamburger-dark ${isMenuOpen ? "active" : ""}`}
+          onClick={toggleMenu}
+        >
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
       </header>
     );
   }

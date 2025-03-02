@@ -84,8 +84,8 @@ const Blog = () => {
               <img
                 src={blogs[0]?.mainImage.asset.url}
                 alt={blogs[0]?.mainImage?.alt}
-                width={464}
-                height={320}
+                width={"100%"}
+                height={"100%"}
               />
             </div>
           </Link>
