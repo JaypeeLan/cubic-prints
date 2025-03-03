@@ -74,61 +74,63 @@ const BlogArticle = () => {
   };
 
   return (
-    <div className="blog-container">
+    <>
       <Header />
-      {isLoading ? (
-        <Loader />
-      ) : article ? (
-        <article className="blog-article">
-          <header className="blog-header">
-            <h1 className="blog-title">{article.title}</h1>
-            {article.subTitle && (
-              <p className="blog-subtitle">{article.subTitle}</p>
-            )}
-            <p className="blog-date">
-              {formatDate(article.publishedAt).toUpperCase()}
-            </p>
-          </header>
+      <div className="blog-container">
+        {isLoading ? (
+          <Loader />
+        ) : article ? (
+          <article className="blog-article">
+            <header className="blog-header">
+              <h1 className="blog-title">{article.title}</h1>
+              {article.subTitle && (
+                <p className="blog-subtitle">{article.subTitle}</p>
+              )}
+              <p className="blog-date">
+                {formatDate(article.publishedAt).toUpperCase()}
+              </p>
+            </header>
 
-          {/* share section */}
+            {/* share section */}
 
-          <div className="copy-section">
-            <FacebookShare url={window.location.href} blankTarget={true} />
-            <TwitterShare url={window.location.href} blankTarget={true} />
-            <WhatsappShare url={window.location.href} blankTarget={true} />
-            <TelegramShare url={window.location.href} blankTarget={true} />
-            <CopyToClipboard
-              text={window.location.href}
-              onCopy={() => alert("Link copied to clipboard!")}
-            >
-              <div className="copy-section__copy">
-                <img src={linkImg} alt="link" width={21} height={11} />
-                copy link
-              </div>
-            </CopyToClipboard>
-          </div>
-          {/* ---- */}
-
-          {article.mainImage?.asset?._id && (
-            <div className="blog-image-container">
-              <img
-                src={article.mainImage.asset.url}
-                alt={article.mainImage.alt || "Article Image"}
-                className="blog-image"
-              />
+            <div className="copy-section">
+              <FacebookShare url={window.location.href} blankTarget={true} />
+              <TwitterShare url={window.location.href} blankTarget={true} />
+              <WhatsappShare url={window.location.href} blankTarget={true} />
+              <TelegramShare url={window.location.href} blankTarget={true} />
+              <CopyToClipboard
+                text={window.location.href}
+                onCopy={() => alert("Link copied to clipboard!")}
+              >
+                <div className="copy-section__copy">
+                  <img src={linkImg} alt="link" width={21} height={11} />
+                  copy link
+                </div>
+              </CopyToClipboard>
             </div>
-          )}
+            {/* ---- */}
 
-          <div className="blog-content">
-            <PortableText value={article.body} components={components} />
+            {article.mainImage?.asset?._id && (
+              <div className="blog-image-container">
+                <img
+                  src={article.mainImage.asset.url}
+                  alt={article.mainImage.alt || "Article Image"}
+                  className="blog-image"
+                />
+              </div>
+            )}
+
+            <div className="blog-content">
+              <PortableText value={article.body} components={components} />
+            </div>
+          </article>
+        ) : (
+          <div className="blog-not-found">
+            <h2>Article not found</h2>
           </div>
-        </article>
-      ) : (
-        <div className="blog-not-found">
-          <h2>Article not found</h2>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 };
 

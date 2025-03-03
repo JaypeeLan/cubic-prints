@@ -546,11 +546,18 @@
   }
 }
 .blog__blog-article h1 {
+  font-family: Red Hat Display Variable;
+  font-weight: 900;
   font-size: 48px;
-  margin-bottom: 8px;
+  line-height: 52.8px;
+  letter-spacing: -3%;
 
   @media screen and (max-width: 768px) {
+    font-family: Red Hat Display Variable;
+    font-weight: 900;
     font-size: 28px;
+    line-height: 30.8px;
+    letter-spacing: -3%;
   }
 }
 
@@ -622,14 +629,15 @@
 }
 
 .blog-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #ffffff;
+  font-family: Red Hat Display Variable;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 30.8px;
+  letter-spacing: -3%;
 }
 
 .blog-subtitle {
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   color: #bbbbbb;
   margin-bottom: 15px;
 }
@@ -652,6 +660,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  margin-bottom: 20px;
 }
 
 /* Blog Content */
@@ -704,17 +713,9 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .blog-container {
+  /* .blog-container {
     padding: 15px;
-  }
-
-  .blog-title {
-    font-size: 2rem;
-  }
-
-  .blog-subtitle {
-    font-size: 1.3rem;
-  }
+  } */
 
   .blog-image-container {
     height: 350px;
@@ -726,17 +727,9 @@
 }
 
 @media (max-width: 768px) {
-  .blog-container {
+  /* .blog-container {
     padding: 10px;
-  }
-
-  .blog-title {
-    font-size: 1.8rem;
-  }
-
-  .blog-subtitle {
-    font-size: 1.2rem;
-  }
+  } */
 
   .blog-image-container {
     height: 280px;
@@ -748,14 +741,6 @@
 }
 
 @media (max-width: 480px) {
-  .blog-title {
-    font-size: 1.5rem;
-  }
-
-  .blog-subtitle {
-    font-size: 1rem;
-  }
-
   .blog-image-container {
     height: 200px;
   }

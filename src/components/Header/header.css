@@ -20,6 +20,10 @@
 .header-dark {
   background-color: #222222;
   color: #fff;
+
+  @media screen and (max-width: 768px) {
+    margin: 24px 8px;
+  }
 }
 
 .header-dark__l {
