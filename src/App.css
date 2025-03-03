@@ -637,6 +637,7 @@
   font-size: 40px;
   line-height: 44px;
   letter-spacing: -3%;
+  margin-bottom: 8px;
 
   @media screen and (max-width: 768px) {
     font-family: Red Hat Display Variable;
