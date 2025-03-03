@@ -75,8 +75,8 @@ const BlogArticle = () => {
 
   return (
     <>
-      <Header />
       <div className="blog-container">
+        <Header />
         {isLoading ? (
           <Loader />
         ) : article ? (
