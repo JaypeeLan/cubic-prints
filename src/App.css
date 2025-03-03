@@ -548,10 +548,19 @@
 .blog__blog-article h1 {
   font-size: 48px;
   margin-bottom: 8px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+  }
 }
 
 .blog__blog-article p {
   margin-bottom: 24px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+    line-height: 30px;
+  }
 }
 
 .blog__blog-article span {
@@ -600,6 +609,10 @@
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  text-align: left;
+}
+.blog-article > * {
+  text-align: left !important;
 }
 
 /* Blog Header */
@@ -753,9 +766,127 @@
 }
 
 .paragraph-text {
-  padding: 5px 0;
+  padding: 15px 0;
 }
 
+.heading-large {
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: -3%;
+}
 .heading-medium {
   padding: 2px 0;
+  font-family: Red Hat Display Variable;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 26.4px;
+  letter-spacing: -3%;
+}
+
+/* --- */
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+.pagination-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pagination-button {
+  background-color: #222222;
+  color: #ffffff;
+  border: 1px solid #565656;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.pagination-button:hover {
+  background-color: #333333;
+}
+
+.pagination-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination-numbers {
+  display: flex;
+  gap: 8px;
+}
+
+.pagination-number {
+  background-color: #222222;
+  color: #ffffff;
+  border: 1px solid #565656;
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination-number:hover {
+  background-color: #333333;
+}
+
+.pagination-number.active {
+  background-color: #ffffff;
+  color: #222222;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .pagination-container {
+    gap: 8px;
+  }
+
+  .pagination-numbers {
+    gap: 4px;
+  }
+
+  .pagination-number {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .pagination-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+.copy-section {
+  border-top: 1px solid #797878;
+  border-bottom: 1px solid #797878;
+  padding: 28px 0;
+  margin-bottom: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.copy-section button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.copy-section__copy {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
 }

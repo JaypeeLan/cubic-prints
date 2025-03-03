@@ -5,6 +5,14 @@ import client from "../../client";
 import Loader from "../../components/Loader";
 import { components } from "../../components/PortableTextComponentView";
 import Header from "../../components/Header";
+import linkImg from "../../assets/link.png";
+import {
+  FacebookShare,
+  TelegramShare,
+  TwitterShare,
+  WhatsappShare,
+} from "react-share-lite";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 interface Article {
   title: string;
@@ -75,12 +83,31 @@ const BlogArticle = () => {
           <header className="blog-header">
             <h1 className="blog-title">{article.title}</h1>
             {article.subTitle && (
-              <h2 className="blog-subtitle">{article.subTitle}</h2>
+              <p className="blog-subtitle">{article.subTitle}</p>
             )}
             <p className="blog-date">
-              Published on {formatDate(article.publishedAt)}
+              {formatDate(article.publishedAt).toUpperCase()}
             </p>
           </header>
+
+          {/* share section */}
+
+          <div className="copy-section">
+            <FacebookShare url={window.location.href} blankTarget={true} />
+            <TwitterShare url={window.location.href} blankTarget={true} />
+            <WhatsappShare url={window.location.href} blankTarget={true} />
+            <TelegramShare url={window.location.href} blankTarget={true} />
+            <CopyToClipboard
+              text={window.location.href}
+              onCopy={() => alert("Link copied to clipboard!")}
+            >
+              <div className="copy-section__copy">
+                <img src={linkImg} alt="link" width={21} height={11} />
+                copy link
+              </div>
+            </CopyToClipboard>
+          </div>
+          {/* ---- */}
 
           {article.mainImage?.asset?._id && (
             <div className="blog-image-container">
