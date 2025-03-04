@@ -1,12 +1,12 @@
-import { useEffect, useState, useRef } from "react";
-import client from "../../client";
-import { Link } from "react-router-dom";
-import Header from "../../components/Header";
-import "../../App.css";
-import Footer from "../../components/Sections/Footer";
-import Cta from "../../components/Sections/Cta";
-import { BlogCard } from "../../components/Card";
-import Loader from "../../components/Loader";
+import { useEffect, useState, useRef } from 'react';
+import client from '../../client';
+import { Link } from 'react-router-dom';
+import Header from '../../components/Header';
+import '../../App.css';
+import Footer from '../../components/Sections/Footer';
+import Cta from '../../components/Sections/Cta';
+import { BlogCard } from '../../components/Card';
+import Loader from '../../components/Loader';
 
 interface Article {
   title: string;
@@ -28,6 +28,7 @@ const Blog = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [shouldScroll, setShouldScroll] = useState(false);
   const blogsPerPage = 9;
   const blogSectionRef = useRef<HTMLDivElement>(null);
 
@@ -53,18 +54,20 @@ const Blog = () => {
         setBlogs(data);
         setIsLoading(false);
       })
-      .catch((err) => console.log("error", err));
+      .catch((err) => console.log('error', err));
   }, []);
 
-  // Scroll to the top of the blog section when page changes
+  // Only scroll when pagination is triggered (shouldScroll is true)
   useEffect(() => {
-    if (blogSectionRef.current && !isLoading) {
+    if (blogSectionRef.current && shouldScroll && !isLoading) {
       blogSectionRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
+        behavior: 'smooth',
+        block: 'start',
       });
+      // Reset the scroll flag after scrolling
+      setShouldScroll(false);
     }
-  }, [currentPage, isLoading]);
+  }, [currentPage, isLoading, shouldScroll]);
 
   if (isLoading) {
     return <Loader />;
@@ -87,11 +90,13 @@ const Blog = () => {
     indexOfLastBlog
   );
 
-  // Change page with animation
+  // Change page with animation and set scrolling flag
   const paginate = (pageNumber: number) => {
     if (pageNumber === currentPage) return;
 
     setIsAnimating(true);
+    // Set scroll flag to true for pagination events only
+    setShouldScroll(true);
 
     // Apply animation timing
     setTimeout(() => {
@@ -116,10 +121,10 @@ const Blog = () => {
                 <p>{featuredBlog.subTitle}</p>
                 <span>
                   {new Date(featuredBlog.publishedAt)
-                    .toLocaleString("en-GB", {
-                      day: "2-digit",
-                      month: "long",
-                      year: "numeric",
+                    .toLocaleString('en-GB', {
+                      day: '2-digit',
+                      month: 'long',
+                      year: 'numeric',
                     })
                     .toUpperCase()}
                 </span>
@@ -128,8 +133,8 @@ const Blog = () => {
               <img
                 src={featuredBlog.mainImage.asset.url}
                 alt={featuredBlog.mainImage?.alt}
-                width={"100%"}
-                height={"100%"}
+                width={'100%'}
+                height={'100%'}
               />
             </div>
           </Link>
@@ -139,7 +144,7 @@ const Blog = () => {
       {/* Blog section with ref for scrolling */}
       <div className="blog-section" ref={blogSectionRef}>
         {blogsForCards.length > 0 && (
-          <div className={`blog-cards ${isAnimating ? "fade-out" : "fade-in"}`}>
+          <div className={`blog-cards ${isAnimating ? 'fade-out' : 'fade-in'}`}>
             {currentPageBlogs.map((blog: Article) => (
               <div className="blog-card" key={blog.slug.current}>
                 <Link to={`/blog/${blog.slug.current}`}>
@@ -147,10 +152,10 @@ const Blog = () => {
                     imgSrc={blog?.mainImage?.asset?.url}
                     title={blog?.title}
                     desc={blog?.subTitle}
-                    date={new Date(blog?.publishedAt).toLocaleString("en-GB", {
-                      day: "2-digit",
-                      month: "long",
-                      year: "numeric",
+                    date={new Date(blog?.publishedAt).toLocaleString('en-GB', {
+                      day: '2-digit',
+                      month: 'long',
+                      year: 'numeric',
                     })}
                   />
                 </Link>
@@ -177,7 +182,7 @@ const Blog = () => {
                     key={i + 1}
                     onClick={() => paginate(i + 1)}
                     disabled={isAnimating}
-                    className={`pagination-number ${currentPage === i + 1 ? "active" : ""}`}
+                    className={`pagination-number ${currentPage === i + 1 ? 'active' : ''}`}
                   >
                     {i + 1}
                   </button>
