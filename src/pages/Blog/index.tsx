@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import client from "../../client";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
@@ -27,7 +27,9 @@ const Blog = () => {
   const [blogs, setBlogs] = useState<Article[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isAnimating, setIsAnimating] = useState(false);
   const blogsPerPage = 9;
+  const blogSectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     client
@@ -54,6 +56,16 @@ const Blog = () => {
       .catch((err) => console.log("error", err));
   }, []);
 
+  // Scroll to the top of the blog section when page changes
+  useEffect(() => {
+    if (blogSectionRef.current && !isLoading) {
+      blogSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [currentPage, isLoading]);
+
   if (isLoading) {
     return <Loader />;
   }
@@ -75,8 +87,18 @@ const Blog = () => {
     indexOfLastBlog
   );
 
-  // Change page
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  // Change page with animation
+  const paginate = (pageNumber: number) => {
+    if (pageNumber === currentPage) return;
+
+    setIsAnimating(true);
+
+    // Apply animation timing
+    setTimeout(() => {
+      setCurrentPage(pageNumber);
+      setIsAnimating(false);
+    }, 300); // Match this with the CSS animation duration
+  };
 
   return (
     <div className="blog">
@@ -114,11 +136,10 @@ const Blog = () => {
         )}
       </div>
 
-      {/* ---- */}
-
-      <div className="blog-section">
+      {/* Blog section with ref for scrolling */}
+      <div className="blog-section" ref={blogSectionRef}>
         {blogsForCards.length > 0 && (
-          <div className="blog-cards">
+          <div className={`blog-cards ${isAnimating ? "fade-out" : "fade-in"}`}>
             {currentPageBlogs.map((blog: Article) => (
               <div className="blog-card" key={blog.slug.current}>
                 <Link to={`/blog/${blog.slug.current}`}>
@@ -144,7 +165,7 @@ const Blog = () => {
             <div className="pagination-container">
               <button
                 onClick={() => paginate(currentPage > 1 ? currentPage - 1 : 1)}
-                disabled={currentPage === 1}
+                disabled={currentPage === 1 || isAnimating}
                 className="pagination-button"
               >
                 Previous
@@ -155,6 +176,7 @@ const Blog = () => {
                   <button
                     key={i + 1}
                     onClick={() => paginate(i + 1)}
+                    disabled={isAnimating}
                     className={`pagination-number ${currentPage === i + 1 ? "active" : ""}`}
                   >
                     {i + 1}
@@ -168,7 +190,7 @@ const Blog = () => {
                     currentPage < totalPages ? currentPage + 1 : totalPages
                   )
                 }
-                disabled={currentPage === totalPages}
+                disabled={currentPage === totalPages || isAnimating}
                 className="pagination-button"
               >
                 Next

@@ -13,6 +13,7 @@ import {
   WhatsappShare,
 } from "react-share-lite";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { Helmet } from "react-helmet";
 
 interface Article {
   title: string;
@@ -73,8 +74,53 @@ const BlogArticle = () => {
     });
   };
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article?.title || "",
+    description: article?.subTitle || "",
+    image: article?.mainImage?.asset?.url || "",
+    datePublished: article?.publishedAt || "",
+    author: {
+      "@type": "Person",
+      name: "Cubic prints ",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Cubic prints",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://cubicprints.africa/CubicLogo.png",
+      },
+    },
+  };
+
   return (
     <>
+      <Helmet>
+        <title>{article ? article.title : "Blog Article"}</title>
+        <meta name="description" content={article?.subTitle || ""} />
+        <meta property="og:title" content={article?.title || ""} />
+        <meta property="og:description" content={article?.subTitle || ""} />
+        <meta
+          property="og:image"
+          content={article?.mainImage?.asset?.url || ""}
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={window.location.href} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={article?.title || ""} />
+        <meta name="twitter:description" content={article?.subTitle || ""} />
+        <meta
+          name="twitter:image"
+          content={article?.mainImage?.asset?.url || ""}
+        />
+        <link rel="canonical" href={window.location.href} />
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+
       <div className="blog-container">
         <Header />
         {isLoading ? (
@@ -91,8 +137,6 @@ const BlogArticle = () => {
               </p>
             </header>
 
-            {/* share section */}
-
             <div className="copy-section">
               <FacebookShare url={window.location.href} blankTarget={true} />
               <TwitterShare url={window.location.href} blankTarget={true} />
@@ -108,7 +152,6 @@ const BlogArticle = () => {
                 </div>
               </CopyToClipboard>
             </div>
-            {/* ---- */}
 
             {article.mainImage?.asset?._id && (
               <div className="blog-image-container">
@@ -116,6 +159,7 @@ const BlogArticle = () => {
                   src={article.mainImage.asset.url}
                   alt={article.mainImage.alt || "Article Image"}
                   className="blog-image"
+                  loading="lazy"
                 />
               </div>
             )}
