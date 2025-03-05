@@ -938,3 +938,24 @@
     transform: rotate(360deg);
   }
 }
+
+.read-more {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 48px;
+  margin-bottom: 72px;
+}
+
+.related-articles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 48px;
+  gap: 40px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

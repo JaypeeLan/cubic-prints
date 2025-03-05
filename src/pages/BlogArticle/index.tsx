@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { PortableText, PortableTextBlock } from "@portabletext/react";
 import client from "../../client";
 import Loader from "../../components/Loader";
@@ -14,6 +14,9 @@ import {
 } from "react-share-lite";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Helmet } from "react-helmet";
+import Cta from "../../components/Sections/Cta";
+import Footer from "../../components/Sections/Footer";
+import { BlogCard } from "../../components/Card";
 
 interface Article {
   title: string;
@@ -34,8 +37,10 @@ const BlogArticle = () => {
   const { slug } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [article, setArticle] = useState<Article | null>(null);
+  const [relatedArticles, setRelatedArticles] = useState<Article[]>([]);
 
   useEffect(() => {
+    // Fetch the current article
     client
       .fetch(
         `*[_type == 'post' && slug.current == $slug][0]{
@@ -56,7 +61,32 @@ const BlogArticle = () => {
       )
       .then((data) => {
         setArticle(data);
-        setIsLoading(false);
+
+        client
+          .fetch(
+            `*[_type == 'post' && slug.current != $slug][0...2]{
+              title,
+              subTitle,
+              slug,
+              mainImage {
+                asset -> {
+                  _id,
+                  url
+                },
+                alt,
+              },
+              publishedAt,
+            }`,
+            { slug }
+          )
+          .then((relatedData) => {
+            setRelatedArticles(relatedData);
+            setIsLoading(false);
+          })
+          .catch((err) => {
+            console.error("Error fetching related articles:", err);
+            setIsLoading(false);
+          });
       })
       .catch((err) => {
         console.error("Error fetching article:", err);
@@ -173,6 +203,37 @@ const BlogArticle = () => {
             <h2>Article not found</h2>
           </div>
         )}
+
+        {/* Related Articles Section - Limited to 2 */}
+        {relatedArticles.length > 0 && (
+          <div className="read-more">
+            <h1 className="blog-title">Read more</h1>
+            <div className="related-articles">
+              {relatedArticles.map((relatedBlog) => (
+                <div className="blog-card" key={relatedBlog.slug.current}>
+                  <Link to={`/blog/${relatedBlog.slug.current}`}>
+                    <BlogCard
+                      imgSrc={relatedBlog?.mainImage?.asset?.url}
+                      title={relatedBlog?.title}
+                      desc={relatedBlog?.subTitle}
+                      date={new Date(relatedBlog?.publishedAt).toLocaleString(
+                        "en-GB",
+                        {
+                          day: "2-digit",
+                          month: "long",
+                          year: "numeric",
+                        }
+                      )}
+                    />
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <Cta />
+        <Footer />
       </div>
     </>
   );
