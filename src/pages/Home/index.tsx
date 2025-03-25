@@ -16,30 +16,32 @@ import "../../App.css";
 
 const HomePage = () => {
   return (
-    <div
-      style={{
-        backgroundColor: "#201e1e",
-        paddingTop: "24px",
-      }}
-    >
-      <SEO />
-      <Header />
-      <AnimatedWrapper>
-        <>
-          <Hero />
-          <Mission />
-          <Services />
-          <Packaging />
-          <Discover />
-          <Showcase />
-          <Brands />
-          <Testimonials />
-          <Cta />
-          <FAQ />
-        </>
-      </AnimatedWrapper>
-      <Footer />
-    </div>
+    <>
+      <div
+        style={{
+          backgroundColor: "#201e1e",
+          paddingTop: "24px",
+        }}
+      >
+        <SEO />
+        <Header />
+        <AnimatedWrapper>
+          <>
+            <Hero />
+            <Mission />
+            <Services />
+            <Packaging />
+            <Discover />
+            <Showcase />
+            <Brands />
+            <Testimonials />
+            <Cta />
+            <FAQ />
+          </>
+        </AnimatedWrapper>
+        <Footer />
+      </div>
+    </>
   );
 };
 
